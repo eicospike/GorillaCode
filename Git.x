@@ -13,8 +13,8 @@ if [ "$2" ]
 		echo "**********idk why you put a space in*************\n***************************************************"
 fi
 echo "##################CLEANING UP SORRY############################"
-rm nnapped.bin
-rm a.out
+rm ./bin/*
+rm ./data/*
 
 
 git add -A

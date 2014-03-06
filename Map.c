@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
        else
          perror ("Couldn't open the directory");    
     
-    filename = "nnapped.bin";
+    filename = "data/nnapped.bin";
 //new crap begin
 	stat(filename, &st);
 	size = st.st_size;
