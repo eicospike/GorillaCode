@@ -14,7 +14,7 @@
 
 int main(int argc, char *argv[])
 {
-    int i, j, k, fd, result, dirres, size, numint;
+    int i, j, k, I, fd, result, dirres, size, numint;
     DIR *dp;
     struct dirent *ep;
     int *map;  
@@ -52,7 +52,7 @@ int main(int argc, char *argv[])
 //it now detects file size and maps it to memory, needs tested with all sizes and types of file
     map = mmap(0, size, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
     printf("%x\n",map[0]);
-    for (i = 25; i <=numint; i++) {
+    for (i = 25; i <=numint; ++i) {
     	map[i] = 0x00000000;
     }
 for (I =  0; I <=numint; ++I) {
