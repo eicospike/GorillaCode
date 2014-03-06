@@ -8,7 +8,7 @@ fi
 
 
 echo $2
-if [ -z "$2" ]
+if [ "$2" ]
 	then
 		echo "idk why you put a space in"
 fi
