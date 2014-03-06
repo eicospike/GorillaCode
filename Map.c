@@ -7,7 +7,7 @@
 #include <sys/mman.h>
 #include <string.h>
 #include <dirent.h>
-
+//older pre generated file size can be removed
 #define FILEPATH "mmapped.bin"
 #define NUMINTS  (1000000)
 #define FILESIZE (NUMINTS * sizeof(int))
@@ -17,10 +17,12 @@ int main(int argc, char *argv[])
     int i, fd, result, dirres, size, numint;
     DIR *dp;
     struct dirent *ep;
-    int *map;  /* mmapped array of int's */
+    int *map;  
     char *filename, *dirname;
     char *info;
     struct stat st;
+
+//some directory mobility start    
     	dirname = "./";
        dp = opendir (dirname);
        if (dp != NULL)
