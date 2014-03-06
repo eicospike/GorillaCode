@@ -12,6 +12,10 @@ if [ "$2" ]
 	then
 		echo "**********idk why you put a space in*************\n***************************************************"
 fi
+echo "##################CLEANING UP SORRY############################"
+rm nnapped.bin
+rm a.out
+
 
 git add -A
 git commit -m "$1"
