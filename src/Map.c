@@ -14,7 +14,7 @@
 
 int main(int argc, char *argv[])
 {
-    int i, fd, result, dirres, size, numint;
+    int i, j, k, fd, result, dirres, size, numint;
     DIR *dp;
     struct dirent *ep;
     int *map;  
@@ -52,22 +52,63 @@ int main(int argc, char *argv[])
 //it now detects file size and maps it to memory, needs tested with all sizes and types of file
     map = mmap(0, size, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
     printf("%x\n",map[0]);
-    for (i = 25; i <=numint; ++i) {
+    for (i = 25; i <=numint; i++) {
     	map[i] = 0x00000000;
     }
-    for (i = 25; i <=numint; ++i) {
+for (I =  0; I <=numint; ++I) {
+    for (i = 25; i <=numint; i++) {
 //        map[i] = 0x4d6e6e61;
 //	map[i] = 0x12345678;
-	map[i] = 0xF0F0F0F0;
+	map[i] = 0xFFFFFFFF;
 //	map[i] = map[0];
-	i = i + 200;
+	i = i + 200 + i;
     }
+    I = I + 4;
+}
+k = 1;
+//for (I =  0; I <=numint; I++) {
     for (i = 25; i <=numint; i++) {
     	map[i] = 0x0F0F0F0F;
-	i = i + 401;
+	k = 1;
+	for (j = 1; j <=10; j++) {
+	map[i+j] = 0xFFFFFFFF;
+	k = k + 1;
+	map[i+j+k] = 0xFFFFFFFF;
+	k = k + 1;
+	map[i+j+k] = 0xFFFFFFFF;
+	k = k + 1;
+	map[i+j+k] = 0xFFFFFFFF;
+	k = k + 1;
+	map[i+j+k] = 0xFFFFFFFF;
+	k = k + 1;
+	map[i+j+k] = 0xFFFFFFFF;
+	k = k + 1;
+	map[i+j+k] = 0xFFFFFFFF;
+        k = k + 1;
+	map[i+j+k] = 0xFFFFFFFF;
+        k = k + 1;
+	map[i+j+k] = 0xFFFFFFFF;
+        k = k + 1;
+	map[i+j+k] = 0xFFFFFFFF;
+        k = k + 1;
+	map[i+j+k] = 0xFFFFFFFF;
+        k = k + 1;
+	map[i+j+k] = 0xFFFFFFFF;
+        k = k + 1;
+	map[i+j+k] = 0xFFFFFFFF;
+        k = k + 1;
+	map[i+j+k] = 0xFFFFFFFF;
+        k = k + 1;
+	}
+
+	i = 101 + i;
     }
+//    I = I + 4;
+//}
+    
     printf("%x\n",map[2]);
     munmap(map, size);
     close(fd);
     return 0;
 }
+    
