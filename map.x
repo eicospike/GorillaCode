@@ -1,11 +1,11 @@
 #!/bin/bash
-echo UUUUUUUUU|minimodem --tx --ascii --alsa -f nnapped.bin 100
+echo UUUUUUUUU|minimodem --tx --ascii --alsa -f ./data/nnapped.bin 100
 
-gcc Map.c
+gcc ./src/Map.c -o ./bin/mAp
 
-xxd nnapped.bin |head
+xxd ./data/nnapped.bin |head
 
-./a.out
+./bin/mAp
 
-xxd nnapped.bin |head
+xxd ./data/nnapped.bin |head
 
