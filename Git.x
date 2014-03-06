@@ -6,6 +6,8 @@ if [ -z "$1" ]
 	echo "usage: Git {commit message}" && exit
 fi
 
+
+echo $2
 if [ -z "$2" ]
 	then
 		echo "idk why you put a space in"
