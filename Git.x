@@ -10,7 +10,7 @@ fi
 echo $2
 if [ "$2" ]
 	then
-		echo "idk why you put a space in"
+		echo "**********idk why you put a space in*************\n***************************************************"
 fi
 
 git add -A
