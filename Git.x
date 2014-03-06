@@ -6,7 +6,10 @@ if [ -z "$1" ]
 	echo "usage: Git {commit message}" && exit
 fi
 
-
+if [ -z "$2" ]
+	then
+		echo "idk why you put a space in"
+fi
 
 git add -A
 git commit -m "$1"
