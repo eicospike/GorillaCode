@@ -13,8 +13,8 @@ if [ "$2" ]
 		echo "**********idk why you put a space in*************\n***************************************************"
 fi
 echo "##################CLEANING UP SORRY############################"
-rm ./Bin/*
-rm ./data/*
+#rm ./Bin/*
+#rm ./data/*
 
 
 git add -A
