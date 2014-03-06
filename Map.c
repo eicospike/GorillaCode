@@ -49,7 +49,7 @@ int main(int argc, char *argv[])
     result = write(fd, "", 1);
     result = lseek(fd, 0L, SEEK_END);
     printf("%i\n",result);
-
+//it now detects file size and maps it to memory, needs tested with all sizes and types of file
     map = mmap(0, size, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
     for (i = 1; i <=numint; ++i) {
 //        map[i] = 0x4d6e6e61;
