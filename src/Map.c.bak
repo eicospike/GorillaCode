@@ -16,7 +16,7 @@
 
 int main(int argc, char *argv[])
 {
-    int i, j, k, I, fd, result, dirres, size, numint, params, kk, kkk;
+    int i, j, k, I, fd, result, dirres, size, numint, params, kk;
     DIR *dp;
     struct dirent *ep;
     int *map;  
@@ -63,7 +63,7 @@ int main(int argc, char *argv[])
 I = 0x00110011;
 for (k = 1; k <= 12; k++){
 
-for (i = 16 + k * 15; i <= 159 + k * 15; i++) {
+for (i = 16 + k * 15; i <= 39 + k * 15; i++) {
 	j = 0x11001100;
 	I = I + j;
 	printf("%x\n",I);
@@ -81,7 +81,7 @@ A = 0;
 //for (kk = 25; kk <=1000; kk++){
 for (b = 1; b <=100; b++){
 for (k = 1; k <=360; k++){
-k = k + 50;
+k = k + 100;
 I = 0x00000000;
 param = 0.1 + k;
 results = sin(param *PI/180) * 100;
@@ -110,7 +110,7 @@ I = 0xAAAAAAAA;
 a = 1;
 for (b = 1; b <=100; b++){
 for (k = 1; k <=360; k++){
-k = k + 5;
+k = k + 15;
 I = 0x00000000;
 param = 0.1 + k;
 results = sin(param *PI/180) * 100;
@@ -220,12 +220,12 @@ A = A + a;
 //############TONE BEEP##############
 //###################################
 a = 1;
-for (b = 1; b <=110; b++){
-for (k = 1; k <=1360; k++){
-k = k + 300;
+for (b = 1; b <=100; b++){
+for (k = 1; k <=360; k++){
+k = k + 5;
 I = 0x00000000;
 param = 0.1 + k;
-results = sin(param *PI/180) * 200;
+results = sin(param *PI/180) * 100;
 result = (int) results;
 printf("%dsintest\n",result);
 for (i = 1; i <= abs(result); i++){
@@ -239,21 +239,14 @@ a = a + 1;
 //###################################
 //############TONE BEEP##############
 //###################################
-for (kkk = 1; kkk <=1500; kkk++){
-A = A + a + 2;
+A = A + a;
 a = 1;
 for (b = 1; b <=100; b++){
-for (k = 1; k <=360; k++){ 
-//if loop try to comment out
-if ( k % 2 == 0 )
-{
-a = 1;
-for (b = 1; b <=110; b++){
-for (k = 1; k <=1360; k++){
-k = k + 300;
+for (k = 1; k <=360; k++){
+k = k + 10;
 I = 0x00000000;
 param = 0.1 + k;
-results = sin(param *PI/180) * 200;
+results = sin(param *PI/180) * 100;
 result = (int) results;
 printf("%dsintest\n",result);
 for (i = 1; i <= abs(result); i++){
@@ -262,27 +255,6 @@ I = I - j * result / abs(result);
 printf("%08Xhexchange\n",I);
 map[a + A] = I;
 a = a + 1;
-}
-}
-
-}
-//try without if loop
-k = k + kk + kkk*22;
-I = 0x00000000;
-param = 110.1 + k;
-results = sin(param *PI/180) * 1250;
-results = results * results;
-result = (int) results;
-printf("%dsintest\n",result);
-for (i = 1; i <= abs(result); i++){
-I = I - j * result / abs(result);
-}
-printf("%08Xhexchange\n",I);
-map[a + A] = I;
-a = a + 1;
-kk = kk;
-A = A + a;
-}
 }
 }
 //###################################
